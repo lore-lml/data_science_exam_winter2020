@@ -1,4 +1,8 @@
-import re
-text = "..ciao ..lo *come *****ahsahha ..akjsldklas . .. *** come..come -cici ahah-chch a++++"
-#print(re.sub(r"([\\*\\.\-/])+[.]*", r"\0", text))
-print(re.sub("([*.\-/+])", " ", text))
+from nltk.stem.snowball import ItalianStemmer
+from nltk.stem import SnowballStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
+stem = SnowballStemmer(language='italian')
+lem = WordNetLemmatizer()
+print(lem.lemmatize("abbandonata"))
+print(stem.stem("abbandonata"))
+print(stem.stem("abbandonerà"))
