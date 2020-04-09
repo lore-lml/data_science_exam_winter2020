@@ -1,8 +1,6 @@
-<div align="center">
-  # Data Science Lab: Process and methods
-  ## Politecnico di Torino
-  ### Exam session: Winter 2020
-</div>
+<h1 align="center">Data Science Lab: Process and methods</h1>
+<h2 align="center">Politecnico di Torino</h2>
+<h3 align="center">Exam session: Winter 2020</h3>
 
 ## 1. Data exploration
 I first understand the structure of my dataset: it is in a csv format, so I encapsulate
