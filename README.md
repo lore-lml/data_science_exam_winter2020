@@ -1,8 +1,8 @@
-#Data Science Lab: Process and methods
-##Politecnico di Torino
-###Exam session: Winter 2020
+# Data Science Lab: Process and methods
+## Politecnico di Torino
+### Exam session: Winter 2020
 
-##1. Data exploration
+## 1. Data exploration
 I first understand the structure of my dataset: it is in a csv format, so I encapsulate
 all data inside a data frame.
 It’s easy to observe that each review has been labeled with just one class chosen
@@ -61,7 +61,7 @@ in a two-gram. For example, if we consider the word “vacanza” by itself, we 
 sure if the review is positive or negative; on the other hand, a two-gram such as “ottima
 vacanza” is probably inside positive one.
 
-##3. Algorithm choice
+## 3. Algorithm choice
 Considering the goal of this data science task, we can observe that we have a binary
 classification problem and a huge quantity of features (the total number of distinct word
 that we have found during the pre-process step) to deal with: my choice fell on logistic
@@ -85,7 +85,7 @@ I would like to show a comparison diagram to support the choice I have made
 
 ![Image description](screenshot/4.png)
 
-##4. Tuning and validation
+## 4. Tuning and validation
 Before start training the model, I split the development dataset into train and test
 set with respectively 75% and 25% proportions. Then I build a parameter grid for
 CountVectorizer and the logistic regression model. I use a brute force approach and
