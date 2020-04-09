@@ -9,7 +9,7 @@ It’s easy to observe that each review has been labeled with just one class cho
 between positive and negative, hence we can plot how they are distributed in terms of
 proportions.
 
-<br><br>
+<br>
 <p align="center"> <img src="screenshot/1.png"> </p>
 <br>
 
