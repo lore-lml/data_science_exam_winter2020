@@ -30,9 +30,20 @@ numbers, URLs or something that could be meaningless for the analysis.
 possible.
 
 <br>
-<p align="center"> <img src="screenshot/2.png"> </p>
+<p align="center">
+  <img src="screenshot/2.png">
+  <i>This is an example of what tokenizer extracts during the first attempts</i>
+</p>
 <br><br>
-<p align="center"> <img src="screenshot/3.png"> </p>
+<p align="center">
+  <img src="screenshot/3.png">
+  <br>
+  <i>This is an example of the top 25 features. As we can see most of
+    them are probably used to label positive reviews. It is reasonable to
+    think that it happens due to the initial imbalance of the two classes (it
+    has been considered 2-grams as explained in the next step).
+  </i>
+</p>
 <br>
 
 ## 2. Preprocessing
@@ -50,7 +61,7 @@ order to better group every shade of a specific "word-root", using ItalianStemme
 class from nltk library.
 Finally, the tokens are filtered so, stop-words, punctuation marks, numbers, words of
 inappropriate length are removed.
-<br>
+<br><br>
 The only words left are the ones with a potential meaning for the analysis, so
 now we can use a CountVectorizer() to convert every word into a number that
 represents its frequency among reviews.
@@ -61,7 +72,7 @@ this problem, we can apply a Tf-Idf Transformation on the output of the
 CountVectorizer. Tf-Idf balances the term frequency in the single review with its inverse
 frequency across all reviews. This means that rarer word will have more importance
 when it's needed to take decisions in sentiment analysis.
-<br>
+<br><br>
 As a final step during vectorization, I consider n-grams of length two in addition
 to one-grams. There are many words that may have poor meaning or may be
 ambiguous, in this context, if considered isolated, but at the same time may be the best
@@ -78,7 +89,7 @@ regression.
 Contrary to what might be thought, logistic regression is mostly used as a binary
 classification algorithm thanks to its characteristic to map each value in input to '0' or
 '1'.
-<br>
+<br><br>
 Having this great amount of features leads to think that there are dependencies
 among them: in this circumstance, probably, some words are correlated with others.
 Using a different classification algorithm such as Naïve Bayes, this situation could turn
@@ -88,16 +99,17 @@ correlation among the words may be negligible using logistic regression because 
 tries to split the feature space as good as possible in a linear way.
 Finally, it handles very well either categorical or continuous features, so it fit perfectly
 with this case.
-<br>
+<br><br>
 Concerning the implementation, logistic regression doesn’t require too many
 combinations of hyper-parameter during the tuning step and it is a very easy-to-use and
 efficient solution in terms of time consumption and prediction rate.
-<br>
+<br><br>
 I would like to show a comparison diagram to support the choice I have made
 
-<br>
+<br><br>
 <p align="center"> <img src="screenshot/4.png"> </p>
-<br>
+<br><br>
+
 ## 4. Tuning and validation
 Before start training the model, I split the development dataset into train and test
 set with respectively 75% and 25% proportions. Then I build a parameter grid for
