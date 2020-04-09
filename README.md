@@ -8,11 +8,16 @@ all data inside a data frame.
 It’s easy to observe that each review has been labeled with just one class chosen
 between positive and negative, hence we can plot how they are distributed in terms of
 proportions.
-![Image description](screenshot/1.png)
+
+<br><br>
+<p align="center"> <img src="screenshot/1.png"> </p>
+<br>
 
 They are very unbalanced, the positive class is approximately doubled with
 respect to the negative one, this could turn into a higher misprediction ratio for the
 latter.
+
+<br>
 
 Then I focus on the text of the reviews, trying to find out what kind of
 transformations are needed during the pre-processing step.
@@ -24,9 +29,11 @@ numbers, URLs or something that could be meaningless for the analysis.
 * I add more filter or text transformation in order to obtain the cleanest data as
 possible.
 
-![Image description](screenshot/2.png)
-
-![Image description](screenshot/3.png)
+<br>
+<p align="center"> <img src="screenshot/2.png"> </p>
+<br><br>
+<p align="center"> <img src="screenshot/3.png"> </p>
+<br>
 
 ## 2. Preprocessing
 Our purpose is to obtain numerical features having meaning for the analysis, so we
@@ -43,6 +50,7 @@ order to better group every shade of a specific "word-root", using ItalianStemme
 class from nltk library.
 Finally, the tokens are filtered so, stop-words, punctuation marks, numbers, words of
 inappropriate length are removed.
+<br>
 The only words left are the ones with a potential meaning for the analysis, so
 now we can use a CountVectorizer() to convert every word into a number that
 represents its frequency among reviews.
@@ -53,6 +61,7 @@ this problem, we can apply a Tf-Idf Transformation on the output of the
 CountVectorizer. Tf-Idf balances the term frequency in the single review with its inverse
 frequency across all reviews. This means that rarer word will have more importance
 when it's needed to take decisions in sentiment analysis.
+<br>
 As a final step during vectorization, I consider n-grams of length two in addition
 to one-grams. There are many words that may have poor meaning or may be
 ambiguous, in this context, if considered isolated, but at the same time may be the best
@@ -69,6 +78,7 @@ regression.
 Contrary to what might be thought, logistic regression is mostly used as a binary
 classification algorithm thanks to its characteristic to map each value in input to '0' or
 '1'.
+<br>
 Having this great amount of features leads to think that there are dependencies
 among them: in this circumstance, probably, some words are correlated with others.
 Using a different classification algorithm such as Naïve Bayes, this situation could turn
@@ -78,13 +88,16 @@ correlation among the words may be negligible using logistic regression because 
 tries to split the feature space as good as possible in a linear way.
 Finally, it handles very well either categorical or continuous features, so it fit perfectly
 with this case.
+<br>
 Concerning the implementation, logistic regression doesn’t require too many
 combinations of hyper-parameter during the tuning step and it is a very easy-to-use and
 efficient solution in terms of time consumption and prediction rate.
+<br>
 I would like to show a comparison diagram to support the choice I have made
 
-![Image description](screenshot/4.png)
-
+<br>
+<p align="center"> <img src="screenshot/4.png"> </p>
+<br>
 ## 4. Tuning and validation
 Before start training the model, I split the development dataset into train and test
 set with respectively 75% and 25% proportions. Then I build a parameter grid for
@@ -99,7 +112,9 @@ the tuning process is faster.
 Once every pipeline has been fitted, I validate all the results using the "f1-score" metric
 and I pick the pipeline that reaches the highest score.
 
-![Image description](screenshot/5.png)
+<br>
+<p align="center"> <img src="screenshot/5.png"> </p>
+<br>
 
 At this point the tuning step is over and the best pipeline can be used to train the
 final model using 100% of the initial dataset. Before starting to fit, I change the pipeline
@@ -108,4 +123,5 @@ huge feature space dimensionality, trying to keep a number of components that co
 around 80% of the explained variance: this guarantees a good balance between
 computational time and accuracy of the model.
 
-![Image description](screenshot/6.png)
+<br>
+<p align="center"> <img src="screenshot/6.png"> </p>
