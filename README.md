@@ -1,6 +1,8 @@
-# Data Science Lab: Process and methods
-## Politecnico di Torino
-### Exam session: Winter 2020
+<div align="center">
+  # Data Science Lab: Process and methods
+  ## Politecnico di Torino
+  ### Exam session: Winter 2020
+</div>
 
 ## 1. Data exploration
 I first understand the structure of my dataset: it is in a csv format, so I encapsulate
