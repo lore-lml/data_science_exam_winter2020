@@ -44,8 +44,7 @@ possible.
     has been considered 2-grams as explained in the next step).
   </i>
 </p>
-<br>
-
+<br><br>
 ## 2. Preprocessing
 Our purpose is to obtain numerical features having meaning for the analysis, so we
 need to select the **most significant** words and then transform each of them into a
@@ -79,6 +78,8 @@ factor to analyse, in order to label a review as positive or negative, when it i
 in a two-gram. For example, if we consider the word “vacanza” by itself, we can’t say for
 sure if the review is positive or negative; on the other hand, a two-gram such as “ottima
 vacanza” is probably inside positive one.
+<br><br>
+ 
 
 ## 3. Algorithm choice
 Considering the goal of this data science task, we can observe that we have a **binary
@@ -108,7 +109,7 @@ I would like to show a **comparison diagram** to support the choice I have made
 
 <br><br>
 <p align="center">
-  <img src="screenshot/4.png">
+  <img src="screenshot/4.png"><br>
   <i>The code used to train Naïve Bayes model is the same code submitted for logistic regression solution. So, I have
     avoided to include it among the solutions.</i>
 </p>
@@ -130,6 +131,7 @@ and I pick the pipeline that reaches the highest score.
 <br>
 <p align="center">
   <img src="screenshot/5.png">
+  <br>
   <i>The result of the best pipeline shows something like this. Even if the two classes are very unbalanced, the difference
     of scores between the two classes are not so far in every metric</i>
 </p>
