@@ -45,6 +45,7 @@ possible.
   </i>
 </p>
 <br><br>
+
 ## 2. Preprocessing
 Our purpose is to obtain numerical features having meaning for the analysis, so we
 need to select the **most significant** words and then transform each of them into a
